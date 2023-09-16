@@ -7,8 +7,8 @@ function App() {
 
   const [selectedCourse, setSelectedCourse] = useState([]);
   const [credit, setCredit] = useState(0);
+  const [remaining, setRemaining] = useState(20);
 
-  console.log(credit);
 
   const handleSelect = (card) => {
     const newSlectedCourse = [...selectedCourse, card];
@@ -16,6 +16,9 @@ function App() {
 
     const newCredit = credit + card.credit_hr;
     setCredit(newCredit);
+
+    const newRemainingHour = remaining - card.credit_hr;
+    setRemaining(newRemainingHour);
   }
 
   return (
@@ -29,7 +32,7 @@ function App() {
           <Cards handleSelect={handleSelect}/>
         </div>
         <div className="col-span-2">
-          <Sidebar credit={credit} selectedCourse={selectedCourse}/>
+          <Sidebar remaining={remaining} credit={credit} selectedCourse={selectedCourse}/>
         </div>
       </div>
     </div>
