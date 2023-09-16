@@ -5,7 +5,7 @@
         "cover_image": "https://i.ibb.co/gZ4YwBr/img-1.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 1500,
-        "credit_hr": "3hr"
+        "credit_hr": 3
       },
       {
         "id": 2,
@@ -13,7 +13,7 @@
         "cover_image": "https://i.ibb.co/k0Cqwnp/img-2.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 1900,
-        "credit_hr": "2hr"
+        "credit_hr": 2
       },
       {
         "id": 3,
@@ -21,7 +21,7 @@
         "cover_image": "https://i.ibb.co/mvCkpMv/img-3.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 2000,
-        "credit_hr": "3hr"
+        "credit_hr": 3
       },
       {
         "id": 4,
@@ -29,7 +29,7 @@
         "cover_image": "https://i.ibb.co/jJJpjr4/img-4.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 3500,
-        "credit_hr": "2hr"
+        "credit_hr": 2
       },
       {
         "id": 5,
@@ -37,7 +37,7 @@
         "cover_image": "https://i.ibb.co/rkG1z78/img-5.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 4500,
-        "credit_hr": "2hr"
+        "credit_hr": 2
       },
       {
         "id": 6,
@@ -45,7 +45,7 @@
         "cover_image": "https://i.ibb.co/bHrcs7p/img-6.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 5000,
-        "credit_hr": "5hr"
+        "credit_hr": 5
       },
       {
         "id": 7,
@@ -53,7 +53,7 @@
         "cover_image": "https://i.ibb.co/Fqvty49/img-7.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 1500,
-        "credit_hr": "3hr"
+        "credit_hr": 3
       },
       {
         "id": 8,
@@ -61,7 +61,7 @@
         "cover_image": "https://i.ibb.co/tps68d2/img-8.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 2200,
-        "credit_hr": "3hr"
+        "credit_hr": 3
       },
       {
         "id": 9,
@@ -69,6 +69,6 @@
         "cover_image": "https://i.ibb.co/kcFJSbQ/img-9.jpg",
         "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         "price": 3000,
-        "credit_hr": "2hr"
+        "credit_hr": 2
       }        
 ]

@@ -6,11 +6,16 @@ import Sidebar from "./components/Sidebar/Sidebar";
 function App() {
 
   const [selectedCourse, setSelectedCourse] = useState([]);
-  // console.log(selectedCourse);
+  const [credit, setCredit] = useState(0);
+
+  console.log(credit);
 
   const handleSelect = (card) => {
-    const newSlectedCourse = [...selectedCourse, card]
-    setSelectedCourse(newSlectedCourse)
+    const newSlectedCourse = [...selectedCourse, card];
+    setSelectedCourse(newSlectedCourse);
+
+    const newCredit = credit + card.credit_hr;
+    setCredit(newCredit);
   }
 
   return (
@@ -24,7 +29,7 @@ function App() {
           <Cards handleSelect={handleSelect}/>
         </div>
         <div className="col-span-2">
-          <Sidebar selectedCourse={selectedCourse}/>
+          <Sidebar credit={credit} selectedCourse={selectedCourse}/>
         </div>
       </div>
     </div>
