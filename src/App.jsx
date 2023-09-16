@@ -4,11 +4,10 @@ import Cards from "./components/Cards/Cards";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
-
   const [selectedCourse, setSelectedCourse] = useState([]);
   const [credit, setCredit] = useState(0);
   const [remaining, setRemaining] = useState(20);
-
+  const [price, setPrice] = useState(0);
 
   const handleSelect = (card) => {
     const newSlectedCourse = [...selectedCourse, card];
@@ -19,23 +18,31 @@ function App() {
 
     const newRemainingHour = remaining - card.credit_hr;
     setRemaining(newRemainingHour);
-  }
+
+    const newPrice = price + card.price;
+    setPrice(newPrice);
+  };
 
   return (
     <div className="bg-gray-300">
       <div className="max-w-7xl mx-auto px-5">
-      <h1 className="text-4xl font-bold text-center pt-6 pb-10">
-        Course Registration
-      </h1>
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-10">
-          <Cards handleSelect={handleSelect}/>
-        </div>
-        <div className="col-span-2">
-          <Sidebar remaining={remaining} credit={credit} selectedCourse={selectedCourse}/>
+        <h1 className="text-4xl font-bold text-center pt-6 pb-10">
+          Course Registration
+        </h1>
+        <div className="grid grid-cols-12 gap-6">
+          <div className="col-span-10">
+            <Cards handleSelect={handleSelect} />
+          </div>
+          <div className="col-span-2">
+            <Sidebar
+              price={price}
+              remaining={remaining}
+              credit={credit}
+              selectedCourse={selectedCourse}
+            />
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

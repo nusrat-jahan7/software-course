@@ -29,7 +29,7 @@ const Card = ({ card, handleSelect }) => {
           <button>
             <FiBookOpen></FiBookOpen>
           </button>
-          <p className="font-semibold text-gray-500">Credit : {credit_hr}</p>
+          <p className="font-semibold text-gray-500">Credit : {credit_hr}hr</p>
         </div>
       </div>
       <div className=" text-center w-full">
@@ -43,6 +43,7 @@ const Card = ({ card, handleSelect }) => {
 
 Card.propTypes = {
   card: PropTypes.object.isRequired,
-};
+  handleSelect: PropTypes.func
+};                                                          
 
 export default Card;

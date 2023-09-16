@@ -1,4 +1,6 @@
-const Sidebar = ({ selectedCourse, credit, remaining }) => {
+import PropTypes from "prop-types";
+
+const Sidebar = ({ selectedCourse, credit, remaining, price }) => {
 
   return (
     <div className="bg-white rounded-xl">
@@ -7,7 +9,7 @@ const Sidebar = ({ selectedCourse, credit, remaining }) => {
       </h1>
       <h1 className="text-lg p-4 font-semibold border-b-2">Course Name :</h1>
       {selectedCourse?.map((item, i) => (
-        <h1 className="p-4 text-gray-400" key={i}>                      
+        <h1 className="px-4 py-2 text-gray-400" key={i}>                      
           {i + 1} {item?.title}
         </h1>
       ))}
@@ -15,10 +17,17 @@ const Sidebar = ({ selectedCourse, credit, remaining }) => {
         Total Credit Hour : {credit}hr         
       </p>
       <p className="text-lg text-gray-500 p-4 font-semibold">
-        Total Price : 13000 USD
+        Total Price : {price} USD
       </p>
     </div>
   );
 };
+
+Sidebar.propTypes = {
+  selectedCourse: PropTypes.object.isRequired,
+  credit: PropTypes.number,
+  remaining: PropTypes.number,
+  price: PropTypes.number
+}; 
 
 export default Sidebar;
