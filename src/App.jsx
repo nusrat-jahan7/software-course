@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Cards from "./components/Cards/Cards";
 import Sidebar from "./components/Sidebar/Sidebar";
+import toast from "react-hot-toast";
 
 function App() {
   const [selectedCourse, setSelectedCourse] = useState([]);
@@ -10,17 +11,29 @@ function App() {
   const [price, setPrice] = useState(0);
 
   const handleSelect = (card) => {
-    const newSlectedCourse = [...selectedCourse, card];
-    setSelectedCourse(newSlectedCourse);
+    const isAlreadySelected = !!selectedCourse.find(
+      (item) => item.title === card.title
+    );
+    console.log(isAlreadySelected);
 
-    const newCredit = credit + card.credit_hr;
-    setCredit(newCredit);
+    if (isAlreadySelected) {
+      toast.error("You can't add twice");
+    } else {
+      const newRemainingHour = remaining - card.credit_hr;
+      setRemaining(newRemainingHour);
+      if (remaining < 1) {
+        toast.error("Remaining hour can't be less than 0");
+      } else {
+        const newSlectedCourse = [...selectedCourse, card];
+        setSelectedCourse(newSlectedCourse);
 
-    const newRemainingHour = remaining - card.credit_hr;
-    setRemaining(newRemainingHour);
+        const newCredit = credit + card.credit_hr;
+        setCredit(newCredit);
 
-    const newPrice = price + card.price;
-    setPrice(newPrice);
+        const newPrice = price + card.price;
+        setPrice(newPrice);
+      }
+    }
   };
 
   return (
