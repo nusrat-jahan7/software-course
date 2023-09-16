@@ -11,42 +11,41 @@ function App() {
   const [price, setPrice] = useState(0);
 
   const handleSelect = (card) => {
-    const isAlreadySelected = !!selectedCourse.find(
+    const isAlreadySelected = selectedCourse.some(
       (item) => item.title === card.title
     );
-    console.log(isAlreadySelected);
 
     if (isAlreadySelected) {
-      toast.error("You can't add twice");
+      toast.error("You can't add the same course twice");
+    } else if (remaining < card.credit_hr) {
+      toast.error("Not enough remaining hours to add this course");
     } else {
       const newRemainingHour = remaining - card.credit_hr;
       setRemaining(newRemainingHour);
-      if (remaining < 1) {
-        toast.error("Remaining hour can't be less than 0");
-      } else {
-        const newSlectedCourse = [...selectedCourse, card];
-        setSelectedCourse(newSlectedCourse);
 
-        const newCredit = credit + card.credit_hr;
-        setCredit(newCredit);
+      const newSelectedCourse = [...selectedCourse, card];
+      setSelectedCourse(newSelectedCourse);
+      toast.success("Course select");
 
-        const newPrice = price + card.price;
-        setPrice(newPrice);
-      }
+      const newCredit = credit + card.credit_hr;
+      setCredit(newCredit);
+
+      const newPrice = price + card.price;
+      setPrice(newPrice);
     }
   };
 
   return (
     <div className="bg-gray-300">
-      <div className="max-w-7xl mx-auto px-5">
-        <h1 className="text-4xl font-bold text-center pt-6 pb-10">
+      <div className="max-w-7xl mx-auto p-5">
+        <h1 className="text-4xl font-bold text-center pb-10">
           Course Registration
         </h1>
         <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-10">
+          <div className="col-span-12 lg:col-span-9">
             <Cards handleSelect={handleSelect} />
           </div>
-          <div className="col-span-2">
+          <div className="col-span-12 lg:col-span-3">
             <Sidebar
               price={price}
               remaining={remaining}
